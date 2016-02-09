@@ -6,11 +6,11 @@
     "start": "node server.js",
     "lint": "eslint src",
     "lint-staged": "git diff --cached --diff-filter=ACMRTUXB --pretty='format:' --name-only | grep -E .jsx\\?$ | xargs node_modules/eslint/bin/eslint.js --quiet --ext .jsx,.js",
-    "pre-commit": "npm run --silent lint-staged && npm run --silent test-min"
+    "pre-commit": "npm run --silent lint-staged"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gaearon/react-hot-boilerplate.git"
+    "url": "https://github.com/mattcav/airiline-interface-prototype"
   },
   "keywords": [
     "react",
