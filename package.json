@@ -1,10 +1,12 @@
 {
-  "name": "react-hot-boilerplate",
+  "name": "AIP",
   "version": "1.0.0",
-  "description": "Boilerplate for ReactJS project with hot code reloading",
+  "description": "Airline Interface Prototype",
   "scripts": {
     "start": "node server.js",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "lint-staged": "git diff --cached --diff-filter=ACMRTUXB --pretty='format:' --name-only | grep -E .jsx\\?$ | xargs node_modules/eslint/bin/eslint.js --quiet --ext .jsx,.js",
+    "pre-commit": "npm run --silent lint-staged && npm run --silent test-min"
   },
   "repository": {
     "type": "git",
@@ -21,12 +23,12 @@
     "edit",
     "webpack"
   ],
-  "author": "Dan Abramov <dan.abramov@me.com> (http://github.com/gaearon)",
+  "author": "Matteo Cavucci <matteo.cavucci@gmail.com> (http://github.com/mattcav)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gaearon/react-hot-boilerplate/issues"
+    "url": "https://github.com/mattcav/airiline-interface-prototype"
   },
-  "homepage": "https://github.com/gaearon/react-hot-boilerplate",
+  "homepage": "https://github.com/mattcav/airiline-interface-prototype",
   "devDependencies": {
     "babel-core": "^6.0.20",
     "babel-eslint": "^4.1.3",
@@ -34,6 +36,7 @@
     "babel-preset-es2015": "^6.0.15",
     "babel-preset-react": "^6.0.15",
     "babel-preset-stage-0": "^6.0.15",
+    "captain-git-hook": "^1.0.5",
     "eslint-plugin-react": "^3.6.2",
     "react-hot-loader": "^1.3.0",
     "webpack": "^1.12.2",
