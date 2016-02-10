@@ -16,11 +16,22 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin()
   ],
+
+  resolve: {
+    extensions: ['', '.js', '.jsx']
+  },
   module: {
-    loaders: [{
-      test: /\.js$/,
-      loaders: ['react-hot', 'babel'],
-      include: path.join(__dirname, 'src')
-    }]
+    loaders: [
+      {
+        test: /\.js$/,
+        loaders: ['react-hot', 'babel'],
+        include: path.join(__dirname, 'src')
+      },
+      {
+        test: /\.jsx$/,
+        loaders: ['react-hot', 'babel'],
+        include: path.join(__dirname, 'src')
+      }
+    ]
   }
 };
