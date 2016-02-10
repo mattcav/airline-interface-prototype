@@ -4,7 +4,7 @@
   "description": "Airline Interface Prototype",
   "scripts": {
     "start": "node server.js",
-    "lint": "eslint src",
+    "lint": "eslint --ext .jsx,.js src",
     "lint-staged": "git diff --cached --diff-filter=ACMRTUXB --pretty='format:' --name-only | grep -E .jsx\\?$ | xargs node_modules/eslint/bin/eslint.js --quiet --ext .jsx,.js",
     "pre-commit": "npm run --silent lint-staged"
   },
@@ -43,6 +43,7 @@
     "webpack-dev-server": "^1.12.1"
   },
   "dependencies": {
+    "eslint": "^1.10.3",
     "react": "^0.14.0",
     "react-dom": "^0.14.0"
   }
