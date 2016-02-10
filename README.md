@@ -8,15 +8,20 @@ A prototype for an Airline ticket list interface, using React, ES2015, ESLint an
 
 ```
 npm install
+gem install scss_lint
 npm start
 open http://localhost:3000
 ```
 
 ## Code quality
 
-### Linting
+### ES Linting
 
 This project includes React-friendly ESLint configuration.
+
+### SCSS Linting
+
+SCSS-linting is active.
 
 ```
 npm run lint
