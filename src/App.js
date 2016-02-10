@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
+import Lol from './components/lol';
 
 export default class App extends Component {
   render() {
     return (
-      <h1>Hello, world.</h1>
+      <div>
+        <h1> Hello World</h1>
+         <Lol />
+      </div>
     );
   }
 }
