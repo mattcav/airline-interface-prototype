@@ -6,15 +6,13 @@ var RESULTS =  [
         'flightId': 'AI-202',
         'departTime': '10:00',
         'arrivalTime': '12:00'
-      }
-    ,
+      },
     'return':
       {
         'flightId': 'AI-204',
         'departTime': '10:00',
         'arrivalTime': '12:00'
-      }
-    ,
+      },
     'price': '125.00'
   },
   {
@@ -40,8 +38,7 @@ var RESULTS =  [
         'flightId': 'BA-899',
         'departTime': '17:00',
         'arrivalTime': '22:30'
-      }
-    ,
+      },
     'return':
       {
         'flightId': 'BA-988',
@@ -74,8 +71,7 @@ var RESULTS =  [
         'flightId': 'BA-899',
         'departTime': '17:00',
         'arrivalTime': '22:30'
-      }
-    ,
+      },
     'return':
       {
         'flightId': 'BA-988',
