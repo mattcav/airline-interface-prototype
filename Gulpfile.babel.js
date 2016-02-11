@@ -10,6 +10,7 @@ import minify from 'gulp-cssnano';
 
 const sassInput = [
   './src/styles/helpers.scss',
+  './src/styles/vendor/rc-slider.scss',
   './src/components/**/styles.scss'
 ];
 
