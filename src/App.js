@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
-import Lol from './components/lol';
+import FlightsList from './components/flights-list';
+import RESULTS_DATA from './data/results';
 
 export default class App extends Component {
+
   render() {
     return (
       <div>
-        <h1> Hello World</h1>
-         <Lol />
+        <FlightsList
+          data={RESULTS_DATA}
+        />
       </div>
     );
   }
