@@ -1,4 +1,4 @@
-var RESULTS =  [
+var RESULTS = [
   {
     'airline': 'PanAm',
     'departure':
@@ -63,7 +63,6 @@ var RESULTS =  [
       },
     'price': '155.00'
   },
-  ,
   {
     'airline': 'British Airways',
     'departure':
