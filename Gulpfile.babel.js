@@ -11,6 +11,7 @@ import minify from 'gulp-cssnano';
 const sassInput = [
   './src/styles/helpers.scss',
   './src/styles/vendor/rc-slider.scss',
+  './src/styles/vendor/datepicker.scss',
   './src/components/**/styles.scss'
 ];
 

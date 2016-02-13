@@ -15,7 +15,11 @@ export default React.createClass({
     from: React.PropTypes.string.isRequired,
     onFromContentChange: React.PropTypes.func.isRequired,
     destination: React.PropTypes.string.isRequired,
-    onDestinationContentChange: React.PropTypes.func.isRequired
+    onDestinationContentChange: React.PropTypes.func.isRequired,
+    departureDate: React.PropTypes.object.isRequired,
+    onDepartureDateChange: React.PropTypes.func.isRequired,
+    returnDate: React.PropTypes.object.isRequired,
+    onReturnDateChange: React.PropTypes.func.isRequired
   },
 
   render() {
@@ -32,6 +36,10 @@ export default React.createClass({
           onFromContentChange={this.props.onFromContentChange}
           destination={this.props.destination}
           onDestinationContentChange={this.props.onDestinationContentChange}
+          departureDate={this.props.departureDate}
+          onDepartureDateChange={this.props.onDepartureDateChange}
+          returnDate={this.props.returnDate}
+          onReturnDateChange={this.props.onReturnDateChange}
         />
 
         <Slider

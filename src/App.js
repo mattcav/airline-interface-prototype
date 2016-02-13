@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import MastHead from './components/masthead';
 import Controls from './components/controls';
 import Results from './components/results';
+import moment from 'moment';
 
 // Data stubs
 import RESULTS_DATA from './data/results';
@@ -15,7 +16,9 @@ export default class App extends Component {
       tripTypes: this.getTripTypes(),
       currentTripType: 'return',
       from: 'FCO',
-      destination: 'BER'
+      destination: 'BER',
+      departureDate: moment(),
+      returnDate: moment()
     };
   }
 
@@ -55,6 +58,18 @@ export default class App extends Component {
     });
   };
 
+  onDepartureDateChange = value => {
+    this.setState({
+      departureDate: value
+    });
+  };
+
+  onReturnDateChange = value => {
+    this.setState({
+      returnDate: value
+    });
+  };
+
   render() {
     return (
       <main>
@@ -71,6 +86,10 @@ export default class App extends Component {
           onFromContentChange={this.onFromContentChange}
           destination={this.state.destination}
           onDestinationContentChange={this.onDestinationContentChange}
+          departureDate={this.state.departureDate}
+          onDepartureDateChange={this.onDepartureDateChange}
+          returnDate={this.state.returnDate}
+          onReturnDateChange={this.onReturnDateChange}
         />
         <Results
           data={RESULTS_DATA}
