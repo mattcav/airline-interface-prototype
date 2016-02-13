@@ -7,7 +7,8 @@ export default React.createClass({
   propTypes: {
     data: React.PropTypes.array.isRequired,
     minimumPrice: React.PropTypes.number,
-    maximumPrice: React.PropTypes.number
+    maximumPrice: React.PropTypes.number,
+    currentTripType: React.PropTypes.string
   },
 
   renderFlights(src, index) {
@@ -17,6 +18,7 @@ export default React.createClass({
         key={index}
         minimumPrice={this.props.minimumPrice}
         maximumPrice={this.props.maximumPrice}
+        currentTripType={this.props.currentTripType}
       />
     );
   },

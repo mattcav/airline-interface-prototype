@@ -18,7 +18,7 @@ export default React.createClass({
     var tripTypeId = tripType.toLowerCase()
         .replace(/ /g,'-')
         .replace(/[^\w-]+/g,'');
-    return(
+    return (
       <RadioElement
         key={index}
         name="trip-type"

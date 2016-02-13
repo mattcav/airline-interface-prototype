@@ -13,12 +13,14 @@ export default class App extends Component {
     this.state = {
       priceRange: [0, 200],
       tripTypes: this.getTripTypes(),
-      currentTripType: "return"
-     };
+      currentTripType: 'return',
+      from: 'FCO',
+      destination: 'BER'
+    };
   }
 
   getTripTypes() {
-    return ["one way", "return"];
+    return ['one way', 'return'];
   }
 
   getMinimumPrice() {
@@ -31,13 +33,25 @@ export default class App extends Component {
 
   onTripTypeChange = (value) => {
     this.setState({
-      currentTripType: value,
+      currentTripType: value
     });
   };
 
   changePriceRange = (value) => {
     this.setState({
-      priceRange: value,
+      priceRange: value
+    });
+  };
+
+  onFromContentChange = value => {
+    this.setState({
+      from: value
+    });
+  };
+
+  onDestinationContentChange = value => {
+    this.setState({
+      destination: value
     });
   };
 
@@ -45,7 +59,7 @@ export default class App extends Component {
     return (
       <main>
         <MastHead
-          banner="aip"
+          banner='aip'
         />
         <Controls
           priceRange={this.state.priceRange}
@@ -53,11 +67,16 @@ export default class App extends Component {
           tripTypes={this.state.tripTypes}
           currentTripType={this.state.currentTripType}
           onTripTypeChange={this.onTripTypeChange}
+          from={this.state.from}
+          onFromContentChange={this.onFromContentChange}
+          destination={this.state.destination}
+          onDestinationContentChange={this.onDestinationContentChange}
         />
         <Results
           data={RESULTS_DATA}
           minimumPrice={this.getMinimumPrice()}
           maximumPrice={this.getMaximumPrice()}
+          currentTripType={this.state.currentTripType}
         />
       </main>
     );
