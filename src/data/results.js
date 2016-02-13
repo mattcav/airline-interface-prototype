@@ -13,7 +13,7 @@ var RESULTS = [
         'departTime': '10:00',
         'arrivalTime': '12:00'
       },
-    'price': '125.00'
+    'price': 78
   },
   {
     'airline': 'Alitalia',
@@ -29,7 +29,7 @@ var RESULTS = [
         'departTime': '17:00',
         'arrivalTime': '22:00'
       },
-    'price': '115.00'
+    'price': 15
   },
   {
     'airline': 'British Airways',
@@ -45,7 +45,7 @@ var RESULTS = [
         'departTime': '06:00',
         'arrivalTime': '12:00'
       },
-    'price': '145.00'
+    'price': 45
   },
   {
     'airline': 'Lufthansa',
@@ -61,7 +61,7 @@ var RESULTS = [
         'departTime': '18:00',
         'arrivalTime': '23:30'
       },
-    'price': '155.00'
+    'price': 55
   },
   {
     'airline': 'British Airways',
@@ -77,7 +77,7 @@ var RESULTS = [
         'departTime': '06:00',
         'arrivalTime': '12:00'
       },
-    'price': '145.00'
+    'price': 45
   },
   {
     'airline': 'Iberia',
@@ -93,7 +93,7 @@ var RESULTS = [
         'departTime': '18:00',
         'arrivalTime': '23:30'
       },
-    'price': '135.00'
+    'price': 35
   },
   {
     'airline': 'Emirates',
@@ -109,7 +109,7 @@ var RESULTS = [
         'departTime': '18:00',
         'arrivalTime': '23:30'
       },
-    'price': '195.00'
+    'price': 85
   }
 ];
 module.exports = RESULTS;

@@ -1,14 +1,20 @@
 import React from 'react';
 
 export default React.createClass({
-  displayName: 'Result',
+  displayName: 'Flight',
 
   propTypes: {
     data: React.PropTypes.object.isRequired,
+    minimumPrice: React.PropTypes.number,
+    maximumPrice: React.PropTypes.number
   },
 
-
   render() {
+    if (this.props.data.price < this.props.minimumPrice
+      || this.props.data.price > this.props.maximumPrice ) {
+      return false;
+    }
+
     return (
       <article>
         <ul>

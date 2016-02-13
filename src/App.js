@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-import Slider from 'rc-slider';
-import FlightsList from './components/flights-list';
+import MastHead from './components/masthead';
+import Controls from './components/controls';
+import Results from './components/results';
+
+// Data stubs
 import RESULTS_DATA from './data/results';
 
 export default class App extends Component {
@@ -8,24 +11,40 @@ export default class App extends Component {
   constructor() {
     super();
     this.state = {
-      value: [20, 40]
+      priceRange: [0, 200]
      };
   }
 
-  changeContent = (value) => {
+  getMinimumPrice() {
+    return this.state.priceRange[0];
+  }
+
+  getMaximumPrice() {
+    return this.state.priceRange[1];
+  }
+
+  changePriceRange = (value) => {
     this.setState({
-      value: value,
+      priceRange: value,
     });
   };
 
   render() {
     return (
-      <div>
-        <Slider range value={this.state.value} onChange={this.changeContent} />
-        <FlightsList
-          data={RESULTS_DATA}
+      <main>
+        <MastHead
+          banner="aip"
         />
-      </div>
+        <Controls
+          priceRange={this.state.priceRange}
+          onSliderInteraction={this.changePriceRange}
+        />
+        <Results
+          data={RESULTS_DATA}
+          minimumPrice={this.getMinimumPrice()}
+          maximumPrice={this.getMaximumPrice()}
+        />
+      </main>
     );
   }
 }
