@@ -40,6 +40,7 @@ export default React.createClass({
           onDepartureDateChange={this.props.onDepartureDateChange}
           returnDate={this.props.returnDate}
           onReturnDateChange={this.props.onReturnDateChange}
+          currentTripType={this.props.currentTripType}
         />
 
         <Slider

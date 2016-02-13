@@ -9,7 +9,8 @@ export default React.createClass({
     departureDate: React.PropTypes.object.isRequired,
     onDepartureDateChange: React.PropTypes.func.isRequired,
     returnDate: React.PropTypes.object.isRequired,
-    onReturnDateChange: React.PropTypes.func.isRequired
+    onReturnDateChange: React.PropTypes.func.isRequired,
+    currentTripType: React.PropTypes.string
   },
 
   onDepartureDateChange(date) {
@@ -32,7 +33,11 @@ export default React.createClass({
     }
   },
 
+
   render() {
+    let startDate = this.props.currentTripType === 'return' ? this.props.departureDate : '';
+    let endDate = this.props.currentTripType === 'return' ? this.props.returnDate : '';
+
     return (
       <div>
         <DatePicker
@@ -40,8 +45,8 @@ export default React.createClass({
           onChange={this.onDepartureDateChange}
           dateFormat={'DD/MM/YYYY'}
           dateFormatCalendar={'DD/MM/YYYY'}
-          startDate={this.props.departureDate}
-          endDate={this.props.returnDate}
+          startDate={startDate}
+          endDate={endDate}
         />
 
         <DatePicker
@@ -49,8 +54,9 @@ export default React.createClass({
           onChange={this.onReturnDateChange}
           dateFormat={'DD/MM/YYYY'}
           dateFormatCalendar={'DD/MM/YYYY'}
-          startDate={this.props.departureDate}
-          endDate={this.props.returnDate}
+          startDate={startDate}
+          endDate={endDate}
+          disabled={this.props.currentTripType !== 'return'}
         />
       </div>
     );

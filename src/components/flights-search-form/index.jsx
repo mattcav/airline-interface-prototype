@@ -13,7 +13,8 @@ export default React.createClass({
     departureDate: React.PropTypes.object.isRequired,
     onDepartureDateChange: React.PropTypes.func.isRequired,
     returnDate: React.PropTypes.object.isRequired,
-    onReturnDateChange: React.PropTypes.func.isRequired
+    onReturnDateChange: React.PropTypes.func.isRequired,
+    currentTripType: React.PropTypes.string
   },
 
   render() {
@@ -35,6 +36,7 @@ export default React.createClass({
         onDepartureDateChange={this.props.onDepartureDateChange}
         returnDate={this.props.returnDate}
         onReturnDateChange={this.props.onReturnDateChange}
+        currentTripType={this.props.currentTripType}
        />
 
       </form>
