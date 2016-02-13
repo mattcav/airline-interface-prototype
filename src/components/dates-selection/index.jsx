@@ -1,5 +1,6 @@
 import React from 'react';
 import DatePicker from 'react-datepicker';
+import moment from 'moment';
 
 export default React.createClass({
   displayName: 'DatesSelection',
@@ -12,11 +13,23 @@ export default React.createClass({
   },
 
   onDepartureDateChange(date) {
+    var dayAfter = moment(date).add(1, 'days');
+    var currentReturnDate = moment(this.props.returnDate);
+
     this.props.onDepartureDateChange(date);
+    if (date.diff(currentReturnDate) > 0) {
+      this.props.onReturnDateChange(dayAfter);
+    }
   },
 
   onReturnDateChange(date) {
+    var dayBefore = moment(date).subtract(1, 'days');
+    var currentDepartureDate = moment(this.props.departureDate);
+
     this.props.onReturnDateChange(date);
+    if (date.diff(currentDepartureDate) < 0) {
+      this.props.onDepartureDateChange(dayBefore);
+    }
   },
 
   render() {
@@ -27,6 +40,8 @@ export default React.createClass({
           onChange={this.onDepartureDateChange}
           dateFormat={'DD/MM/YYYY'}
           dateFormatCalendar={'DD/MM/YYYY'}
+          startDate={this.props.departureDate}
+          endDate={this.props.returnDate}
         />
 
         <DatePicker
@@ -34,6 +49,8 @@ export default React.createClass({
           onChange={this.onReturnDateChange}
           dateFormat={'DD/MM/YYYY'}
           dateFormatCalendar={'DD/MM/YYYY'}
+          startDate={this.props.departureDate}
+          endDate={this.props.returnDate}
         />
       </div>
     );

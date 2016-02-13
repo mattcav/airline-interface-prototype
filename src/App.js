@@ -18,7 +18,7 @@ export default class App extends Component {
       from: 'FCO',
       destination: 'BER',
       departureDate: moment(),
-      returnDate: moment()
+      returnDate: moment().add(1, 'days')
     };
   }
 
