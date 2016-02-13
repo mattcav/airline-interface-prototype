@@ -23,8 +23,17 @@ export default React.createClass({
   },
 
   render() {
-    if (this.props.data.price < this.props.minimumPrice
-      || this.props.data.price > this.props.maximumPrice ) {
+    // calculate total price. If one-way, get only departure price.
+    var price = this.props.currentTripType === 'return' ?
+              this.props.data.departure.price + this.props.data.return.price
+              : this.props.data.departure.price;
+
+    // Display always 2 decimals in prices & currency.
+    var displayPrice = price.toFixed(2) + '€';
+
+    // if the price is not in the selected span, do not render
+    if (price < this.props.minimumPrice
+      || price > this.props.maximumPrice ) {
       return false;
     }
 
@@ -37,7 +46,7 @@ export default React.createClass({
           <li>{this.props.data.departure.departTime}</li>
           <li>{this.props.data.departure.arrivalTime}</li>
           {this.renderReturnData()}
-          <li>{this.props.data.price}</li>
+          <li>{displayPrice}</li>
         </ul>
       </article>
     );

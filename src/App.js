@@ -12,6 +12,7 @@ export default class App extends Component {
   constructor() {
     super();
     this.state = {
+      isSubmitted: false,
       priceRange: [0, 200],
       tripTypes: this.getTripTypes(),
       currentTripType: 'return',
@@ -70,6 +71,12 @@ export default class App extends Component {
     });
   };
 
+  onFormSubmit = () => {
+    this.setState({
+      isSubmitted: true
+    });
+  };
+
   render() {
     return (
       <main>
@@ -90,6 +97,7 @@ export default class App extends Component {
           onDepartureDateChange={this.onDepartureDateChange}
           returnDate={this.state.returnDate}
           onReturnDateChange={this.onReturnDateChange}
+          onSubmit={this.onFormSubmit}
         />
         <Results
           data={RESULTS_DATA}

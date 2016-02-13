@@ -2,6 +2,7 @@ import React from 'react';
 import Slider from 'rc-slider';
 import TripTypeSwitch from '../trip-type-switch';
 import FlightsSearchForm from '../flights-search-form';
+import SubmitButton from '../submit-button';
 
 export default React.createClass({
   displayName: 'Controls',
@@ -19,7 +20,8 @@ export default React.createClass({
     departureDate: React.PropTypes.object.isRequired,
     onDepartureDateChange: React.PropTypes.func.isRequired,
     returnDate: React.PropTypes.object.isRequired,
-    onReturnDateChange: React.PropTypes.func.isRequired
+    onReturnDateChange: React.PropTypes.func.isRequired,
+    onSubmit: React.PropTypes.func.isRequired
   },
 
   render() {
@@ -47,6 +49,13 @@ export default React.createClass({
           range
           value={this.props.priceRange}
           onChange={this.props.onSliderInteraction}
+          min={10}
+          max={200}
+        />
+
+        <SubmitButton
+          onSubmit={this.props.onSubmit}
+          label='Search'
         />
       </aside>
     );
