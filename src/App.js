@@ -11,8 +11,14 @@ export default class App extends Component {
   constructor() {
     super();
     this.state = {
-      priceRange: [0, 200]
+      priceRange: [0, 200],
+      tripTypes: this.getTripTypes(),
+      currentTripType: "return"
      };
+  }
+
+  getTripTypes() {
+    return ["one way", "return"];
   }
 
   getMinimumPrice() {
@@ -22,6 +28,12 @@ export default class App extends Component {
   getMaximumPrice() {
     return this.state.priceRange[1];
   }
+
+  onTripTypeChange = (value) => {
+    this.setState({
+      currentTripType: value,
+    });
+  };
 
   changePriceRange = (value) => {
     this.setState({
@@ -38,6 +50,9 @@ export default class App extends Component {
         <Controls
           priceRange={this.state.priceRange}
           onSliderInteraction={this.changePriceRange}
+          tripTypes={this.state.tripTypes}
+          currentTripType={this.state.currentTripType}
+          onTripTypeChange={this.onTripTypeChange}
         />
         <Results
           data={RESULTS_DATA}

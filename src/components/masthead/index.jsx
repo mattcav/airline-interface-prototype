@@ -7,7 +7,6 @@ export default React.createClass({
     banner: React.PropTypes.string.isRequired,
   },
 
-
   render() {
     return (
       <header>
