@@ -1,5 +1,4 @@
 import React from 'react';
-import Slider from 'rc-slider';
 import FlightsList from '../flights-list';
 
 export default React.createClass({

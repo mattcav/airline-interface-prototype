@@ -11,7 +11,7 @@ export default React.createClass({
   },
 
   renderFlights(src, index) {
-    return(
+    return (
       <Flight
         data={src}
         key={index}
