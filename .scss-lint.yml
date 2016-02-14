@@ -1,6 +1,8 @@
 exclude:
   - './node_modules/**/*'
   - './src/styles/vendor/*'
+  - './src/styles/config/*'
+  - './src/styles/helpers/*'
 
 linters:
 

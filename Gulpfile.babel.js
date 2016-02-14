@@ -9,10 +9,10 @@ import minify from 'gulp-cssnano';
  */
 
 const sassInput = [
-  './src/styles/helpers.scss',
-  './src/styles/vendor/normalize.scss',
-  './src/styles/vendor/rc-slider.scss',
-  './src/styles/vendor/datepicker.scss',
+  './src/styles/config/*',
+  './src/styles/helpers/*',
+  './src/styles/vendor/*',
+  './src/styles/base/*',
   './src/components/**/styles.scss'
 ];
 
