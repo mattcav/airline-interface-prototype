@@ -29,7 +29,7 @@ export default React.createClass({
 
   render() {
     return (
-      <form {...classes('')}>
+      <div {...classes('')}>
         <fieldset {...classes('fieldset')}>
           <FormTextInput
             label={'From'}
@@ -64,7 +64,7 @@ export default React.createClass({
         />
       </fieldset>
 
-      </form>
+      </div>
     );
   }
 });

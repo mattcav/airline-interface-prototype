@@ -1,9 +1,9 @@
 import React from 'react';
 import BEMHelper from 'react-bem-helper';
-import Slider from 'rc-slider';
 import TripTypeSwitch from '../trip-type-switch';
 import FlightsSearchForm from '../flights-search-form';
 import SubmitButton from '../submit-button';
+import PriceSlider from '../price-slider';
 
 const classes = new BEMHelper({
   name: 'controls',
@@ -41,47 +41,48 @@ export default React.createClass({
         itemScope
         itemType='http://schema.org/WPSideBar'
       >
-      <div {...classes('widget', 'top')}>
-        <TripTypeSwitch
-          tripTypes={this.props.tripTypes}
-          currentTripType={this.props.currentTripType}
-          onChange={this.props.onTripTypeChange}
-        />
-      </div>
+        <form {...classes('form')}>
+          <div {...classes('widget', 'top')}>
+            <TripTypeSwitch
+              tripTypes={this.props.tripTypes}
+              currentTripType={this.props.currentTripType}
+              onChange={this.props.onTripTypeChange}
+            />
+          </div>
 
-      <div {...classes('widget')}>
-        <FlightsSearchForm
-          from={this.props.from}
-          onFromContentChange={this.props.onFromContentChange}
-          destination={this.props.destination}
-          onDestinationContentChange={this.props.onDestinationContentChange}
-          departureDate={this.props.departureDate}
-          onDepartureDateChange={this.props.onDepartureDateChange}
-          returnDate={this.props.returnDate}
-          onReturnDateChange={this.props.onReturnDateChange}
-          currentTripType={this.props.currentTripType}
-          availableAirports={this.props.availableAirports}
-          passengers={this.props.passengers}
-          onPassengersChange={this.props.onPassengersChange}
-        />
-      </div>
+          <div {...classes('widget')}>
+            <FlightsSearchForm
+              from={this.props.from}
+              onFromContentChange={this.props.onFromContentChange}
+              destination={this.props.destination}
+              onDestinationContentChange={this.props.onDestinationContentChange}
+              departureDate={this.props.departureDate}
+              onDepartureDateChange={this.props.onDepartureDateChange}
+              returnDate={this.props.returnDate}
+              onReturnDateChange={this.props.onReturnDateChange}
+              currentTripType={this.props.currentTripType}
+              availableAirports={this.props.availableAirports}
+              passengers={this.props.passengers}
+              onPassengersChange={this.props.onPassengersChange}
+            />
+          </div>
 
-      <div {...classes('widget')}>
-        <Slider
-          range
-          value={this.props.priceRange}
-          onChange={this.props.onSliderInteraction}
-          min={10}
-          max={200}
-        />
-      </div>
+          <div {...classes('action')}>
+            <SubmitButton
+              onSubmit={this.props.onSubmit}
+              label='Search'
+            />
+          </div>
+        </form>
 
-      <div {...classes('action')}>
-        <SubmitButton
-          onSubmit={this.props.onSubmit}
-          label='Search'
-        />
-      </div>
+        <div {...classes('filters')}>
+          <div {...classes('widget')}>
+            <PriceSlider
+              priceRange={this.props.priceRange}
+              onSliderInteraction={this.props.onSliderInteraction}
+            />
+          </div>
+        </div>
       </aside>
     );
   }

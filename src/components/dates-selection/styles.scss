@@ -1,3 +1,9 @@
+.fse-dates-selection__selector--return {
+  .is-one-way & {
+    @include visually-hidden;
+  }
+}
+
 .fse-dates-selection__wrapper {
   @include fse-input-wrapper;
 }
@@ -5,3 +11,4 @@
 .fse-dates-selection__label {
   @include fse-input-label;
 }
+

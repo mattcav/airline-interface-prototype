@@ -14,7 +14,7 @@ export default class App extends Component {
     super();
     this.state = {
       isSubmitted: false,
-      priceRange: [0, 200],
+      priceRange: [20, 165],
       tripTypes: this.getTripTypes(),
       currentTripType: 'return',
       from: 'Rome Fiumicino',

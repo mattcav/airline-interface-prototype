@@ -1,0 +1,17 @@
+.fse-submit-button {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-bottom: $rithm;
+}
+
+.fse-submit-button__button {
+  display: inline-block;
+  background: $action-color;
+  color: $text-color;
+  border: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: em($ratio-medium);
+  padding: 0.5rem 1rem;
+}

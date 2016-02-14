@@ -6,7 +6,8 @@
 }
 
 .fse-radio-element--is-selected {
-  background-color: $button-bg-color--active;
+  background-color: $text-color;
+  color: white;
 }
 
 .fse-radio-element__label {
@@ -15,7 +16,6 @@
   padding: 0.5rem 1rem;
   cursor: pointer;
 }
-
 
 .fse-radio-element__input {
   display: none;

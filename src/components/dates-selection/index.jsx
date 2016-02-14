@@ -45,7 +45,7 @@ export default React.createClass({
     let startDate = this.props.departureDate;
     let endDate = this.props.currentTripType === 'return' ?
                   this.props.returnDate : this.props.departureDate;
-    let isOneWay = this.props.currentTripType !== 'return';
+    let isOneWay = this.props.currentTripType !== 'return' ? 'is-one-way' : 'is-return';
 
     return (
       <div {...classes('')}>
@@ -66,7 +66,7 @@ export default React.createClass({
           </label>
         </div>
 
-        <div {...classes('selector', isOneWay)}>
+        <div {...classes('selector', 'selector-return', isOneWay)}>
           <label {...classes('wrapper')}>
             <span {...classes('label')}>
               Return date

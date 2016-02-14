@@ -1,0 +1,4 @@
+.fse-price-slider__label {
+  @include fse-input-label;
+  margin-bottom: ($rithm * 2);
+}

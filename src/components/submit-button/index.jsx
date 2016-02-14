@@ -1,4 +1,10 @@
 import React from 'react';
+import BEMHelper from 'react-bem-helper';
+
+const classes = new BEMHelper({
+  name: 'submit-button',
+  prefix: 'fse-'
+});
 
 export default React.createClass({
   displayName: 'SubmitButton',
@@ -10,8 +16,9 @@ export default React.createClass({
 
   render() {
     return (
-      <div>
+      <div {...classes('')}>
         <button
+          {...classes('button')}
           onClick={this.props.onSubmit}
         >
           {this.props.label}

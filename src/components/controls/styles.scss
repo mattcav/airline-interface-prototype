@@ -1,7 +1,12 @@
 .fse-controls {
   padding: 0 $rithm;
+  margin: 0 0 ($rithm * 2);
 }
 
 .fse-controls__widget {
   margin-bottom: $rithm;
+}
+
+.fse-controls__filters {
+  margin-top: ($rithm * 2);
 }
