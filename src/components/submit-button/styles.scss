@@ -7,13 +7,18 @@
 
 .fse-submit-button__button {
   display: inline-block;
-  background: $action-color;
+  background-color: $action-color;
   color: $text-color;
   border: 0;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: em($ratio-medium);
   padding: 0.5rem 1rem;
+  transition: background-color 300ms ease-in 0ms;
+
+  @include on-interaction() {
+    background-color: mix($action-color, white, 70%);
+  }
 }
 
 .fse-submit-button__button--small {
