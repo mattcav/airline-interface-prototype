@@ -17,12 +17,12 @@ export default React.createClass({
     return (
       <header
         role='banner'
-        itemscope
-        itemtype='http://schema.org/WPHeader'
+        itemScope
+        itemType='http://schema.org/WPHeader'
         {...classes()}
       >
         <h1
-          itemprop='headline'
+          itemProp='headline'
           {...classes('title')}
         >
           {this.props.banner}

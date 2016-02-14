@@ -1,8 +1,14 @@
 import React from 'react';
+import BEMHelper from 'react-bem-helper';
 import Slider from 'rc-slider';
 import TripTypeSwitch from '../trip-type-switch';
 import FlightsSearchForm from '../flights-search-form';
 import SubmitButton from '../submit-button';
+
+const classes = new BEMHelper({
+  name: 'controls',
+  prefix: 'fse-'
+});
 
 export default React.createClass({
   displayName: 'Controls',
@@ -26,13 +32,21 @@ export default React.createClass({
 
   render() {
     return (
-      <aside>
+      <aside
+        {...classes()}
+        role='complementary'
+        itemScope
+        itemType='http://schema.org/WPSideBar'
+      >
+      <div {...classes('widget', 'top')}>
         <TripTypeSwitch
           tripTypes={this.props.tripTypes}
           currentTripType={this.props.currentTripType}
           onChange={this.props.onTripTypeChange}
         />
+      </div>
 
+      <div {...classes('widget')}>
         <FlightsSearchForm
           from={this.props.from}
           onFromContentChange={this.props.onFromContentChange}
@@ -44,7 +58,9 @@ export default React.createClass({
           onReturnDateChange={this.props.onReturnDateChange}
           currentTripType={this.props.currentTripType}
         />
+      </div>
 
+      <div {...classes('widget')}>
         <Slider
           range
           value={this.props.priceRange}
@@ -52,11 +68,14 @@ export default React.createClass({
           min={10}
           max={200}
         />
+      </div>
 
+      <div {...classes('action')}>
         <SubmitButton
           onSubmit={this.props.onSubmit}
           label='Search'
         />
+      </div>
       </aside>
     );
   }
