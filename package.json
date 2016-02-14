@@ -1,7 +1,7 @@
 {
-  "name": "AIP",
+  "name": "FSE",
   "version": "1.0.0",
-  "description": "Airline Interface Prototype",
+  "description": "Flight Search Engine",
   "scripts": {
     "start": "node server.js",
     "lint": "eslint --ext .jsx,.js src; scss-lint ./src --config ./.scss-lint.yml; exit 0;",

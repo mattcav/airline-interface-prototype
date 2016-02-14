@@ -81,7 +81,7 @@ export default class App extends Component {
     return (
       <main>
         <MastHead
-          banner='aip'
+          banner='Flight search engine'
         />
         <Controls
           priceRange={this.state.priceRange}
