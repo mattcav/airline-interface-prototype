@@ -1,4 +1,10 @@
 import React from 'react';
+import BEMHelper from 'react-bem-helper';
+
+const classes = new BEMHelper({
+  name: 'radio-element',
+  prefix: 'fse-'
+});
 
 export default React.createClass({
   displayName: 'RadioElement',
@@ -16,12 +22,19 @@ export default React.createClass({
   },
 
   render() {
+    let selectedClass = this.props.id === this.props.currentTripType ? 'is-selected' : '';
+
     return (
-     <div>
-      <label htmlFor={this.props.id}>
+     <div {...classes('', selectedClass)}>
+      <label
+        {...classes('label')}
+        tabIndex='0'
+        htmlFor={this.props.id}
+      >
         {this.props.label}
       </label>
       <input
+        {...classes('input')}
         type="radio"
         id={this.props.id}
         name={this.props.name}

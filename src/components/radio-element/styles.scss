@@ -1,0 +1,22 @@
+.fse-radio-element {
+  display: inline-block;
+  background-color: $button-bg-color;
+  width: 50%;
+  text-align: center;
+}
+
+.fse-radio-element--is-selected {
+  background-color: $button-bg-color--active;
+}
+
+.fse-radio-element__label {
+  display: block;
+  font-size: em($ratio-medium);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+
+.fse-radio-element__input {
+  display: none;
+}
