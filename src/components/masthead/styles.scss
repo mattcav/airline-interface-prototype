@@ -1,4 +1,6 @@
 .fse-masthead {
+  position: relative;
+  z-index: 100;
   overflow: hidden;
   padding: 0 $rithm;
   background-color: $primary-color;
