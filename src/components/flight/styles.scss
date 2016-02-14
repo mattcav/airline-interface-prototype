@@ -1,12 +1,19 @@
 .fse-flight {
-  border: 1px solid $primary-color;
+  border: 1px solid darken($box-background-color, 20%);
+  background-color: $box-background-color;
   border-radius: 3px;
   margin-bottom: $rithm;
-  padding: $rithm $rithm 0;
+  padding: ($rithm / 2) ($rithm / 2) 0;
 }
 
 .fse-flight__flight {
-  margin: ($rithm / 2) 0;
+  margin: $rithm 0;
+  width: 50%;
+  float: left;
+  padding: 0 ($rithm / 2);
+}
+
+.fse-flight__info {
   padding-bottom: ($rithm / 2);
   border-bottom: 1px dotted $primary-color;
 }
@@ -15,17 +22,24 @@
   margin-left: 2px;
 }
 
+.fse-flight__trip {
+  margin: ($rithm / 2) 0;
+}
+
 .fse-flight__trip-label {
   @include h1;
   font-size: $h3-font-size;
 }
 
 .fse-flight__time {
+  font-size: em($ratio-small);
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
 .fse-flight__price {
-  @include h2;
+  @include h1;
   font-weight: 700;
+  margin-top: $h2-margin-bottom;
+  padding: 0 ($rithm / 2);
 }

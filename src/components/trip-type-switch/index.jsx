@@ -1,5 +1,11 @@
 import React from 'react';
 import RadioElement from '../radio-element';
+import BEMHelper from 'react-bem-helper';
+
+const classes = new BEMHelper({
+  name: 'trip-type-switch',
+  prefix: 'fse-'
+});
 
 export default React.createClass({
   displayName: 'TripTypeSwitch',
@@ -32,7 +38,7 @@ export default React.createClass({
 
   render() {
     return (
-     <div>
+     <div {...classes('')}>
       {this.props.tripTypes.map(this.renderRadioElement)}
      </div>
     );

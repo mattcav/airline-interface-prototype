@@ -93,7 +93,7 @@ export default React.createClass({
         {this.renderReturnData()}
 
         <div {...classes('price')}>
-          Price: {displayPrice}
+          {displayPrice}
         </div>
 
         <div {...classes('button')}>

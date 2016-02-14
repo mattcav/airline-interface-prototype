@@ -3,16 +3,19 @@
   background-color: $button-bg-color;
   width: 50%;
   text-align: center;
+  transition: background-color 200ms ease-in 0ms;
 }
 
 .fse-radio-element--is-selected {
-  background-color: $text-color;
+  background-color: $primary-color;
   color: white;
 }
 
 .fse-radio-element__label {
   display: block;
-  font-size: em($ratio-medium);
+  font-size: em($ratio-small);
+  text-transform: uppercase;
+  letter-spacing: 1px;
   padding: 0.5rem 1rem;
   cursor: pointer;
 }
