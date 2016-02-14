@@ -1,3 +1,31 @@
-.lol {
-  background: tomato;
+.fse-flight {
+  border: 1px solid $primary-color;
+  border-radius: 3px;
+  margin-bottom: $rithm;
+  padding: $rithm $rithm 0;
+}
+
+.fse-flight__flight {
+  margin: ($rithm / 2) 0;
+  padding-bottom: ($rithm / 2);
+  border-bottom: 1px dotted $primary-color;
+}
+
+.fse-flight__code {
+  margin-left: 2px;
+}
+
+.fse-flight__trip-label {
+  @include h1;
+  font-size: $h3-font-size;
+}
+
+.fse-flight__time {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.fse-flight__price {
+  @include h2;
+  font-weight: 700;
 }

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 Airline Interface Prototype
 =====================
 

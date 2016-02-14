@@ -41,6 +41,14 @@ export default class App extends Component {
     return AIRPORTS;
   }
 
+  getFormattedDepartureDate() {
+    return moment(this.state.departureDate).format('dddd, Do MMMM YYYY');
+  }
+
+  getFormattedReturnDate() {
+    return moment(this.state.returnDate).format('dddd, Do MMMM YYYY');
+  }
+
   onTripTypeChange = (value) => {
     this.setState({
       currentTripType: value
@@ -119,6 +127,8 @@ export default class App extends Component {
           minimumPrice={this.getMinimumPrice()}
           maximumPrice={this.getMaximumPrice()}
           currentTripType={this.state.currentTripType}
+          departureDate={this.getFormattedDepartureDate()}
+          returnDate={this.getFormattedReturnDate()}
         />
       </main>
     );

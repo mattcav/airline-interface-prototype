@@ -11,14 +11,17 @@ export default React.createClass({
 
   propTypes: {
     label: React.PropTypes.string.isRequired,
-    onSubmit: React.PropTypes.func.isRequired
+    onSubmit: React.PropTypes.func.isRequired,
+    modifier: React.PropTypes.string
   },
 
   render() {
+    let modifier = this.props.modifier ? this.props.modifier : '';
+
     return (
-      <div {...classes('')}>
+      <div {...classes('', modifier)}>
         <button
-          {...classes('button')}
+          {...classes('button', modifier)}
           onClick={this.props.onSubmit}
         >
           {this.props.label}
