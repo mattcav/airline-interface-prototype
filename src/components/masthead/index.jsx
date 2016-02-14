@@ -1,4 +1,10 @@
 import React from 'react';
+import BEMHelper from 'react-bem-helper';
+
+const classes = new BEMHelper({
+  name: 'masthead',
+  prefix: 'fse-'
+});
 
 export default React.createClass({
   displayName: 'MastHead',
@@ -9,8 +15,8 @@ export default React.createClass({
 
   render() {
     return (
-      <header>
-        <h1>
+      <header {...classes()}>
+        <h1 {...classes('title')}>
           {this.props.banner}
         </h1>
       </header>
