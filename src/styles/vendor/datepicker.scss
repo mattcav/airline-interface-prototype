@@ -1,3 +1,6 @@
+.datepicker__tether-element {
+  z-index: 100;
+}
 .datepicker__tether-element-attached-top .datepicker__triangle, .datepicker__tether-element-attached-bottom .datepicker__triangle, .datepicker__year-read-view--down-arrow {
   margin-left: -8px;
   position: absolute;

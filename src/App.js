@@ -14,6 +14,7 @@ export default class App extends Component {
     super();
     this.state = {
       isSubmitted: false,
+      isFlightSelected: false,
       priceRange: [20, 165],
       tripTypes: this.getTripTypes(),
       currentTripType: 'return',
@@ -97,6 +98,12 @@ export default class App extends Component {
     });
   };
 
+  onFlightSelect = () => {
+    this.setState({
+      isFlightSelected: true
+    });
+  };
+
   render() {
     return (
       <main>
@@ -129,6 +136,7 @@ export default class App extends Component {
           currentTripType={this.state.currentTripType}
           departureDate={this.getFormattedDepartureDate()}
           returnDate={this.getFormattedReturnDate()}
+          onFlightSelect={this.onFlightSelect}
         />
       </main>
     );

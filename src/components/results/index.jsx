@@ -17,7 +17,8 @@ export default React.createClass({
     maximumPrice: React.PropTypes.number,
     currentTripType: React.PropTypes.string,
     departureDate: React.PropTypes.string.isRequired,
-    returnDate: React.PropTypes.string.isRequired
+    returnDate: React.PropTypes.string.isRequired,
+    onFlightSelect: React.PropTypes.func
   },
 
   render() {
@@ -46,6 +47,7 @@ export default React.createClass({
             onFromContentChange={this.props.onFromContentChange}
             destination={this.props.destination}
             onDestinationContentChange={this.props.onDestinationContentChange}
+            onFlightSelect={this.props.onFlightSelect}
           />
         </div>
       </article>

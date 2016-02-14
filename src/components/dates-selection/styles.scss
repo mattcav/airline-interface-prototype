@@ -6,6 +6,7 @@
 
 .fse-dates-selection__wrapper {
   @include fse-input-wrapper;
+  position: relative;
 }
 
 .fse-dates-selection__label {

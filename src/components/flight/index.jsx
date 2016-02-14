@@ -15,7 +15,8 @@ export default React.createClass({
     data: React.PropTypes.object.isRequired,
     minimumPrice: React.PropTypes.number,
     maximumPrice: React.PropTypes.number,
-    currentTripType: React.PropTypes.string
+    currentTripType: React.PropTypes.string,
+    onSubmit: React.PropTypes.func
   },
 
   renderReturnData() {
@@ -64,44 +65,50 @@ export default React.createClass({
 
     return (
       <article {...classes('')}>
-        <img
-          {...classes('logo')}
-          src={'./static/images/' + airlineSlug + '.png'}
-          alt={this.props.data.airline}
-        />
-
-        <div {...classes('flight', 'flight--departure')}>
-          <ul {...classes('info')}>
-            <li {...classes('code')}>
-              {this.props.data.departure.flightId}
-            </li>
-            <li {...classes('trip')}>
-              <span {...classes('trip-label')}>
-                FCO > BER
-              </span>
-            </li>
-            <li {...classes('time')}>
-             <span {...classes('label')}>Depart: </span>
-             {this.props.data.departure.departTime}
-            </li>
-            <li {...classes('time')}>
-             <span {...classes('label')}>Arrive: </span>
-             {this.props.data.departure.arrivalTime}
-            </li>
-          </ul>
-        </div>
-        {this.renderReturnData()}
-
-        <div {...classes('price')}>
-          {displayPrice}
-        </div>
-
-        <div {...classes('button')}>
-          <SubmitButton
-            onSubmit={this.props.onSubmit}
-            label='Select this flight'
-            modifier='small'
+        <div {...classes('logo')}>
+          <img
+            {...classes('img')}
+            src={'./static/images/' + airlineSlug + '.png'}
+            alt={this.props.data.airline}
           />
+        </div>
+
+        <div {...classes('solution')}>
+          <div {...classes('flight', 'flight--departure')}>
+            <ul {...classes('info')}>
+              <li {...classes('code')}>
+                {this.props.data.departure.flightId}
+              </li>
+              <li {...classes('trip')}>
+                <span {...classes('trip-label')}>
+                  FCO > BER
+                </span>
+              </li>
+              <li {...classes('time')}>
+               <span {...classes('label')}>Depart: </span>
+               {this.props.data.departure.departTime}
+              </li>
+              <li {...classes('time')}>
+               <span {...classes('label')}>Arrive: </span>
+               {this.props.data.departure.arrivalTime}
+              </li>
+            </ul>
+          </div>
+          {this.renderReturnData()}
+        </div>
+
+        <div {...classes('action')}>
+          <div {...classes('price')}>
+            {displayPrice}
+          </div>
+
+          <div {...classes('button')}>
+            <SubmitButton
+              onSubmit={this.props.onSubmit}
+              label='Select this flight'
+              modifier='small'
+            />
+          </div>
         </div>
       </article>
     );

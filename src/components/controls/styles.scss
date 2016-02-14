@@ -3,9 +3,12 @@
   margin-bottom: ($rithm * 2);
   background-color: $box-background-color;
 
-  @include media('>=tablet-landscape') {
+  @include media('>=tablet-portrait') {
     width: 33.333%;
+    max-width: 24rem;
     float: left;
+    margin-bottom: 0;
+    min-height: 100vh;
   }
 }
 
@@ -19,6 +22,7 @@
 
 .fse-controls__widget {
   margin-bottom: $rithm;
+  position: relative;
 }
 
 .fse-controls__filters {

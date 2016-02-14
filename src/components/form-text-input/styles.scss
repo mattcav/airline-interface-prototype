@@ -1,5 +1,7 @@
 .fse-form-text-input__wrapper {
   @include fse-input-wrapper;
+  position: relative;
+  z-index: 100;
 
   > div {
     display: block !important; // because this PR is not yet accepted: https://github.com/zoeabryant/react-autocomplete/commit/6f0b53d98a1544b403ab255c54b06b7629c00019

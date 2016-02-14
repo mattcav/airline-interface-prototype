@@ -19,7 +19,7 @@ export default React.createClass({
     return (
       <section {...classes()}>
         <span {...classes('label')}>
-          Refine Flight Search
+          Refine Flight Prices
         </span>
         <div {...classes('slider')}>
           <Slider
@@ -28,7 +28,6 @@ export default React.createClass({
             onChange={this.props.onSliderInteraction}
             min={0}
             max={200}
-            tooltipAlwaysVisible={true}
           />
         </div>
       </section>

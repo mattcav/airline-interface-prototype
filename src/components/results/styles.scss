@@ -1,19 +1,42 @@
 .fse-results {
+  @include clearfix;
   padding: 0 $rithm $rithm;
 
-  @include media('>=tablet-landscape') {
+  @include media('>=tablet-portrait') {
     width: 66.666%;
-    float: right;
+    max-width: 70rem;
+    float: left;
   }
 }
 
 .fse-results__header {
   @include l-block;
+  @include clearfix;
   padding-bottom: $rithm;
   margin-bottom: $rithm;
   border-bottom: 1px solid $primary-color;
 
   @include media('>=tablet-landscape') {
     max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    border: 0;
+  }
+}
+
+.fse-results__title {
+  @include media('>=tablet-landscape') {
+    float: left;
+    flex: 1;
+  }
+}
+
+.fse-results__recap {
+  @include media('>=tablet-landscape') {
+    margin-top: 1rem;
+    float: right;
   }
 }

@@ -1,12 +1,12 @@
 .fse-masthead {
   overflow: hidden;
-  border-bottom: 1px solid $primary-color;
   padding: 0 $rithm;
+  background-color: $primary-color;
 }
 
 .fse-masthead__title {
-  @include h2;
-  color: $primary-color;
+  font-size: $ratio-medium;
+  color: white;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
