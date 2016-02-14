@@ -66,7 +66,7 @@ export default React.createClass({
       <article {...classes('')}>
         <img
           {...classes('logo')}
-          src={'./static/images/' + airlineSlug + '.jpg'}
+          src={'./static/images/' + airlineSlug + '.png'}
           alt={this.props.data.airline}
         />
 

@@ -34,6 +34,15 @@ abbr[title] {
   font-family: $fonts--comp;
 }
 
+@mixin section-heading {
+  font-family: $fonts--cond;
+  font-size: $h2-font-size;
+  font-weight: $fonts-bold-weight;
+  line-height: $h2-line-height;
+  margin-bottom: $h2-margin-bottom;
+  margin-top: $h2-margin-top;
+}
+
 @mixin h1 {
   font-family: $fonts--cond;
   font-size: $h2-font-size;

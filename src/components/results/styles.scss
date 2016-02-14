@@ -1,9 +1,19 @@
 .fse-results {
   padding: 0 $rithm $rithm;
+
+  @include media('>=tablet-landscape') {
+    width: 66.666%;
+    float: right;
+  }
 }
 
 .fse-results__header {
+  @include l-block;
   padding-bottom: $rithm;
   margin-bottom: $rithm;
   border-bottom: 1px solid $primary-color;
+
+  @include media('>=tablet-landscape') {
+    max-width: 100%;
+  }
 }

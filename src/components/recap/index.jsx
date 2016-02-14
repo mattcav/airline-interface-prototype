@@ -22,7 +22,9 @@ export default React.createClass({
           <span {...classes('label')}>
             Return:
           </span>
-          {this.props.returnDate}
+          <span {...classes('value')}>
+            {this.props.returnDate}
+          </span>
         </p>
       );
     }
@@ -36,7 +38,9 @@ export default React.createClass({
           <span {...classes('label')}>
             Depart:
           </span>
-          {this.props.departureDate}
+          <span {...classes('value')}>
+            {this.props.departureDate}
+          </span>
         </p>
         {this.renderReturn()}
       </div>

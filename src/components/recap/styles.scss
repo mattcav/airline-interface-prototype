@@ -5,5 +5,11 @@
 .fse-recap__label {
   display: inline-block;
   margin-right: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.fse-recap__value {
   font-weight: 700;
 }
+

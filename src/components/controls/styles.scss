@@ -2,10 +2,19 @@
   padding: $rithm;
   margin-bottom: ($rithm * 2);
   background-color: $box-background-color;
+
+  @include media('>=tablet-landscape') {
+    width: 33.333%;
+    float: left;
+  }
 }
 
 .fse-controls__form {
   @include l-block;
+
+  @include media('>=tablet-landscape') {
+    max-width: 100%;
+  }
 }
 
 .fse-controls__widget {

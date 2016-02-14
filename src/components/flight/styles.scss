@@ -5,6 +5,10 @@
   border-radius: 3px;
   margin-bottom: $rithm;
   padding: ($rithm / 2) ($rithm / 2) 0;
+
+  @include media('>=tablet-landscape') {
+    max-width: 100%;
+  }
 }
 
 .fse-flight__flight {
@@ -28,7 +32,7 @@
 }
 
 .fse-flight__trip-label {
-  @include h1;
+  @include section-heading;
   font-size: $h3-font-size;
 }
 
@@ -39,7 +43,7 @@
 }
 
 .fse-flight__price {
-  @include h1;
+  @include section-heading;
   font-weight: 700;
   margin-top: $h2-margin-bottom;
   padding: 0 ($rithm / 2);
