@@ -7,6 +7,7 @@
     max-width: 70rem;
     float: left;
     margin-left: 33.333%;
+    margin-top: ($rithm * 2);
   }
 
   @include media('>=desktop') {

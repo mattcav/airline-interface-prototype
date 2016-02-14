@@ -4,6 +4,13 @@
   overflow: hidden;
   padding: 0 $rithm;
   background-color: $primary-color;
+
+  @include media('>=tablet-portrait') {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
 }
 
 .fse-masthead__title {
