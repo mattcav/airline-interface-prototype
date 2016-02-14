@@ -15,8 +15,16 @@ export default React.createClass({
 
   render() {
     return (
-      <header {...classes()}>
-        <h1 {...classes('title')}>
+      <header
+        role='banner'
+        itemscope
+        itemtype='http://schema.org/WPHeader'
+        {...classes()}
+      >
+        <h1
+          itemprop='headline'
+          {...classes('title')}
+        >
           {this.props.banner}
         </h1>
       </header>
