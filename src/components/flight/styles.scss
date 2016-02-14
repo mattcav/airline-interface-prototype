@@ -1,4 +1,5 @@
 .fse-flight {
+  @include l-block;
   border: 1px solid darken($box-background-color, 20%);
   background-color: $box-background-color;
   border-radius: 3px;

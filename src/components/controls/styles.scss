@@ -1,7 +1,11 @@
 .fse-controls {
   padding: $rithm;
-  margin: 0 0 ($rithm * 2);
+  margin-bottom: ($rithm * 2);
   background-color: $box-background-color;
+}
+
+.fse-controls__form {
+  @include l-block;
 }
 
 .fse-controls__widget {
@@ -9,5 +13,6 @@
 }
 
 .fse-controls__filters {
+  @include l-block;
   margin-top: ($rithm * 2);
 }
