@@ -35,10 +35,9 @@ export default React.createClass({
 
 
   render() {
-    let startDate = this.props.currentTripType === 'return' ?
-                    this.props.departureDate : '';
+    let startDate = this.props.departureDate;
     let endDate = this.props.currentTripType === 'return' ?
-                  this.props.returnDate : '';
+                  this.props.returnDate : this.props.departureDate;
 
     return (
       <div>
