@@ -5,7 +5,12 @@
   @include media('>=tablet-portrait') {
     width: 66.666%;
     max-width: 70rem;
-    float: right;
+    float: left;
+    margin-left: 33.333%;
+  }
+
+  @include media('>=desktop') {
+    margin-left: 26rem;
   }
 }
 
