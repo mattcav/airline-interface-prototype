@@ -27,7 +27,10 @@ export default React.createClass({
     onDepartureDateChange: React.PropTypes.func.isRequired,
     returnDate: React.PropTypes.object.isRequired,
     onReturnDateChange: React.PropTypes.func.isRequired,
-    onSubmit: React.PropTypes.func.isRequired
+    onSubmit: React.PropTypes.func.isRequired,
+    availableAirports: React.PropTypes.array.isRequired,
+    passengers: React.PropTypes.string.isRequired,
+    onPassengersChange: React.PropTypes.func.isRequired
   },
 
   render() {
@@ -57,6 +60,9 @@ export default React.createClass({
           returnDate={this.props.returnDate}
           onReturnDateChange={this.props.onReturnDateChange}
           currentTripType={this.props.currentTripType}
+          availableAirports={this.props.availableAirports}
+          passengers={this.props.passengers}
+          onPassengersChange={this.props.onPassengersChange}
         />
       </div>
 

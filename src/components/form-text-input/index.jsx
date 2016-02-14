@@ -13,6 +13,7 @@ export default React.createClass({
   propTypes: {
     label: React.PropTypes.string.isRequired,
     content: React.PropTypes.string.isRequired,
+    suggestions: React.PropTypes.array,
     onContentChange: React.PropTypes.func.isRequired
   },
 
@@ -20,23 +21,14 @@ export default React.createClass({
     this.props.onContentChange(event.target.value);
   },
 
-  getAirports() {
-    return [
-      { code: 'BER', name: 'Berlin Brandeburg'},
-      { code: 'FCO', name: 'Rome Fiumicino'},
-      { code: 'AUH', name: 'Abu Dhabi'},
-      { code: 'LHR', name: 'London Heatrow'}
-    ];
-  },
-
-  matchAirportToTerm(airport, value) {
+  matchSuggestionToTerm(suggestion, value) {
     return (
-      airport.name.toLowerCase().indexOf(value.toLowerCase()) !== -1 ||
-      airport.code.toLowerCase().indexOf(value.toLowerCase()) !== -1
+      suggestion.name.toLowerCase().indexOf(value.toLowerCase()) !== -1 ||
+      suggestion.code.toLowerCase().indexOf(value.toLowerCase()) !== -1
     );
   },
 
-  sortAirports(a, b, value) {
+  sortSuggestions(a, b, value) {
     return (
       a.name.toLowerCase().indexOf(value.toLowerCase()) >
       b.name.toLowerCase().indexOf(value.toLowerCase()) ? 1 : -1
@@ -53,10 +45,10 @@ export default React.createClass({
         <Autocomplete
           initialValue={this.props.content}
           onChange={(event, value) => {this.props.onContentChange(value);}}
-          items={this.getAirports()}
+          items={this.props.suggestions}
           getItemValue={(item) => item.name}
-          shouldItemRender={this.matchAirportToTerm}
-          sortItems={this.sortAirports}
+          shouldItemRender={this.matchSuggestionToTerm}
+          sortItems={this.sortSuggestions}
           inputProps={{ className: 'fse-form-text-input__input' }}
           renderItem={(item, isHighlighted) => (
             <div

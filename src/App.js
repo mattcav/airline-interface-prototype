@@ -6,6 +6,7 @@ import moment from 'moment';
 
 // Data stubs
 import RESULTS_DATA from './data/results';
+import AIRPORTS from './data/airports';
 
 export default class App extends Component {
 
@@ -19,7 +20,8 @@ export default class App extends Component {
       from: 'Rome Fiumicino',
       destination: 'Berlin Brandeburg',
       departureDate: moment(),
-      returnDate: moment().add(1, 'days')
+      returnDate: moment().add(1, 'days'),
+      passengers: '2'
     };
   }
 
@@ -33,6 +35,10 @@ export default class App extends Component {
 
   getMaximumPrice() {
     return this.state.priceRange[1];
+  }
+
+  getAvailableAirports() {
+    return AIRPORTS;
   }
 
   onTripTypeChange = (value) => {
@@ -71,6 +77,12 @@ export default class App extends Component {
     });
   };
 
+  onPassengersChange= value => {
+    this.setState({
+      passengers: value
+    });
+  };
+
   onFormSubmit = () => {
     this.setState({
       isSubmitted: true
@@ -98,6 +110,9 @@ export default class App extends Component {
           returnDate={this.state.returnDate}
           onReturnDateChange={this.onReturnDateChange}
           onSubmit={this.onFormSubmit}
+          availableAirports={this.getAvailableAirports()}
+          passengers={this.state.passengers}
+          onPassengersChange={this.onPassengersChange}
         />
         <Results
           data={RESULTS_DATA}

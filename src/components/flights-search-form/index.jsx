@@ -2,6 +2,7 @@ import React from 'react';
 import FormTextInput from '../form-text-input';
 import DatesSelection from '../dates-selection';
 import BEMHelper from 'react-bem-helper';
+import NUMBER_OF_PASSENGERS from '../../data/number-of-passengers';
 
 const classes = new BEMHelper({
   name: 'flight-search-form',
@@ -20,7 +21,10 @@ export default React.createClass({
     onDepartureDateChange: React.PropTypes.func.isRequired,
     returnDate: React.PropTypes.object.isRequired,
     onReturnDateChange: React.PropTypes.func.isRequired,
-    currentTripType: React.PropTypes.string
+    currentTripType: React.PropTypes.string,
+    availableAirports: React.PropTypes.array.isRequired,
+    passengers: React.PropTypes.string.isRequired,
+    onPassengersChange: React.PropTypes.func.isRequired
   },
 
   render() {
@@ -30,11 +34,13 @@ export default React.createClass({
           <FormTextInput
             label={'From'}
             content={this.props.from}
+            suggestions={this.props.availableAirports}
             onContentChange={this.props.onFromContentChange}
           />
           <FormTextInput
             label={'Destination'}
             content={this.props.destination}
+            suggestions={this.props.availableAirports}
             onContentChange={this.props.onDestinationContentChange}
           />
         </fieldset>
@@ -46,6 +52,15 @@ export default React.createClass({
           returnDate={this.props.returnDate}
           onReturnDateChange={this.props.onReturnDateChange}
           currentTripType={this.props.currentTripType}
+        />
+      </fieldset>
+
+      <fieldset {...classes('fieldset')}>
+        <FormTextInput
+          label={'Passengers'}
+          suggestions={NUMBER_OF_PASSENGERS}
+          content={this.props.passengers}
+          onContentChange={this.props.onPassengersChange}
         />
       </fieldset>
 
