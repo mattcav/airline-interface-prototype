@@ -7,25 +7,6 @@ const classes = new BEMHelper({
   prefix: 'fse-'
 });
 
-
-const styles = {
-  item: {
-    padding: '2px 6px',
-    cursor: 'default'
-  },
-
-  highlightedItem: {
-    color: 'white',
-    background: 'hsl(200, 50%, 50%)',
-    padding: '2px 6px',
-    cursor: 'default'
-  },
-
-  menu: {
-    border: 'solid 1px #ccc'
-  }
-};
-
 export default React.createClass({
   displayName: 'FormTextInput',
 
@@ -79,9 +60,8 @@ export default React.createClass({
           inputProps={{ className: 'fse-form-text-input__input' }}
           renderItem={(item, isHighlighted) => (
             <div
-              style={isHighlighted ? styles.highlightedItem : styles.item}
+              className={isHighlighted ? 'fse-form-text-input__suggestion--is-highlighted' : 'fse-form-text-input__suggestion'}
               key={item.abbr}
-              {...classes('suggestion')}
             >{item.name}</div>
           )}
         />

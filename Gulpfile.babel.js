@@ -11,8 +11,8 @@ import minify from 'gulp-cssnano';
 const sassInput = [
   './src/styles/config/*',
   './src/styles/helpers/*',
-  './src/styles/vendor/*',
   './src/styles/base/*',
+  './src/styles/vendor/*',
   './src/components/**/styles.scss'
 ];
 

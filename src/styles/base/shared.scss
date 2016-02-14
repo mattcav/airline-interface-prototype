@@ -1,0 +1,19 @@
+@mixin fse-input {
+  display: block;
+  width: 100%;
+  font-size: em($ratio-small);
+  padding: 0.25rem 0.5rem;
+}
+
+@mixin fse-input-label {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: em($ratio-small);
+}
+
+@mixin fse-input-wrapper {
+  display: block;
+  margin: 0 0 $rithm / 2;
+}
+

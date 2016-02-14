@@ -44,7 +44,6 @@
 }
 
 .datepicker {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
   background-color: #fff;
   color: #000;
@@ -158,7 +157,7 @@
 }
 .datepicker__day--selected, .datepicker__day--in-range {
   border-radius: 4px;
-  background-color: #216ba5;
+  background-color: $primary-color;
   color: #fff;
 }
 .datepicker__day--selected:hover, .datepicker__day--in-range:hover {
@@ -177,14 +176,9 @@
 }
 
 .datepicker__input {
-  position: relative;
-  font-size: 13px;
-  border-radius: 4px;
-  box-shadow: inset 0 2px 2px #e9e9e9;
-  border: 1px solid #aeaeae;
-  line-height: 16px;
-  padding: 6px 10px 5px;
+  @include fse-input;
 }
+
 .datepicker__input:focus {
   outline: none;
   border-color: #aeaeae;

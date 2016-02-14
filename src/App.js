@@ -16,8 +16,8 @@ export default class App extends Component {
       priceRange: [0, 200],
       tripTypes: this.getTripTypes(),
       currentTripType: 'return',
-      from: 'FCO',
-      destination: 'BER',
+      from: 'Rome Fiumicino',
+      destination: 'Berlin Brandeburg',
       departureDate: moment(),
       returnDate: moment().add(1, 'days')
     };
