@@ -1,6 +1,12 @@
 import React from 'react';
 import FormTextInput from '../form-text-input';
 import DatesSelection from '../dates-selection';
+import BEMHelper from 'react-bem-helper';
+
+const classes = new BEMHelper({
+  name: 'flight-search-form',
+  prefix: 'fse-'
+});
 
 export default React.createClass({
   displayName: 'FlightsSearchForm',
@@ -19,25 +25,29 @@ export default React.createClass({
 
   render() {
     return (
-      <form>
-        <fieldset>
+      <form {...classes('')}>
+        <fieldset {...classes('fieldset')}>
           <FormTextInput
+            label={'From'}
             content={this.props.from}
             onContentChange={this.props.onFromContentChange}
           />
           <FormTextInput
+            label={'Destination'}
             content={this.props.destination}
             onContentChange={this.props.onDestinationContentChange}
           />
         </fieldset>
 
-       <DatesSelection
-        departureDate={this.props.departureDate}
-        onDepartureDateChange={this.props.onDepartureDateChange}
-        returnDate={this.props.returnDate}
-        onReturnDateChange={this.props.onReturnDateChange}
-        currentTripType={this.props.currentTripType}
-       />
+      <fieldset {...classes('fieldset')}>
+        <DatesSelection
+          departureDate={this.props.departureDate}
+          onDepartureDateChange={this.props.onDepartureDateChange}
+          returnDate={this.props.returnDate}
+          onReturnDateChange={this.props.onReturnDateChange}
+          currentTripType={this.props.currentTripType}
+        />
+      </fieldset>
 
       </form>
     );

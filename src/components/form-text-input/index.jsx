@@ -1,5 +1,12 @@
 import React from 'react';
 import Autocomplete from 'react-autocomplete';
+import BEMHelper from 'react-bem-helper';
+
+const classes = new BEMHelper({
+  name: 'form-text-input',
+  prefix: 'fse-'
+});
+
 
 const styles = {
   item: {
@@ -23,6 +30,7 @@ export default React.createClass({
   displayName: 'FormTextInput',
 
   propTypes: {
+    label: React.PropTypes.string.isRequired,
     content: React.PropTypes.string.isRequired,
     onContentChange: React.PropTypes.func.isRequired
   },
@@ -56,20 +64,29 @@ export default React.createClass({
 
   render() {
     return (
-     <Autocomplete
-      initialValue={this.props.content}
-      onChange={(event, value) => {this.props.onContentChange(value);}}
-      items={this.getAirports()}
-      getItemValue={(item) => item.name}
-      shouldItemRender={this.matchAirportToTerm}
-      sortItems={this.sortAirports}
-      renderItem={(item, isHighlighted) => (
-        <div
-          style={isHighlighted ? styles.highlightedItem : styles.item}
-          key={item.abbr}
-        >{item.name}</div>
-      )}
-    />
+    <div {...classes('')}>
+      <label {...classes('wrapper')}>
+        <span {...classes('label')}>
+          {this.props.label}
+        </span>
+        <Autocomplete
+          initialValue={this.props.content}
+          onChange={(event, value) => {this.props.onContentChange(value);}}
+          items={this.getAirports()}
+          getItemValue={(item) => item.name}
+          shouldItemRender={this.matchAirportToTerm}
+          sortItems={this.sortAirports}
+          inputProps={{ className: 'fse-form-text-input__input' }}
+          renderItem={(item, isHighlighted) => (
+            <div
+              style={isHighlighted ? styles.highlightedItem : styles.item}
+              key={item.abbr}
+              {...classes('suggestion')}
+            >{item.name}</div>
+          )}
+        />
+      </label>
+    </div>
     );
   }
 });

@@ -1,0 +1,22 @@
+.fse-form-text-input__wrapper {
+  display: block;
+  margin: 0 0 $rithm / 2;
+
+  > div {
+    display: block !important; // because this PR is not yet accepted: https://github.com/zoeabryant/react-autocomplete/commit/6f0b53d98a1544b403ab255c54b06b7629c00019
+  }
+}
+
+.fse-form-text-input__label {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: em($ratio-small);
+}
+
+.fse-form-text-input__input {
+  display: block;
+  width: 100%;
+  font-size: em($ratio-tiny);
+  padding: 0.25rem 0.5rem;
+}

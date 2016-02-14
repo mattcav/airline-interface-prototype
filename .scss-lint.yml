@@ -173,3 +173,6 @@ linters:
 
   ZeroUnit:
     enabled: true
+
+  ImportantRule:
+    enabled: false
